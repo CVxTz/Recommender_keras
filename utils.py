@@ -57,7 +57,7 @@ def get_data():
     max_work = max(data["movieId"].tolist() )
 
 
-    return train, test, max_user, max_work
+    return train, test, max_user, max_work, mapping_work
 
 
 
@@ -78,7 +78,7 @@ def get_model_1(max_work, max_user):
     o = Dense(1)(o)
 
     rec_model = Model(inputs=[w_inputs, u_inputs], outputs=o)
-    rec_model.summary()
+    #rec_model.summary()
     rec_model.compile(loss='mae', optimizer='adam', metrics=["mae"])
 
     return rec_model
@@ -103,7 +103,7 @@ def get_model_2(max_work, max_user):
     o = Dense(1)(o)
 
     rec_model = Model(inputs=[w_inputs, u_inputs], outputs=o)
-    rec_model.summary()
+    #rec_model.summary()
     rec_model.compile(loss='mae', optimizer='adam', metrics=["mae"])
 
     return rec_model
@@ -128,7 +128,7 @@ def get_model_3(max_work, max_user):
     o = Dense(1)(o)
 
     rec_model = Model(inputs=[w_inputs, u_inputs], outputs=o)
-    rec_model.summary()
+    #rec_model.summary()
     rec_model.compile(loss='mae', optimizer='adam', metrics=["mae"])
 
     return rec_model
